@@ -2,6 +2,11 @@
 
 namespace App\Providers;
 
+use App\Actions\AcknowledgeRegistrationAction;
+use App\Actions\TopupRegistrantAction;
+use App\Events\ContactCreated;
+use App\Events\ContactRegistered;
+use App\Notifications\AcknowledgeRegistration;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -18,6 +23,12 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
+        ContactCreated::class => [
+            AcknowledgeRegistrationAction::class
+        ],
+        ContactRegistered::class => [
+            TopupRegistrantAction::class
+        ]
     ];
 
     /**

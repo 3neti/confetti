@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use Coreproc\MsisdnPh\Msisdn;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Validator;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,6 +25,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Validator::extend('msisdn', function ($attribute, $value, $parameters) {
+            return Msisdn::validate($value);
+        });
     }
 }
