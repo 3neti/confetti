@@ -1,0 +1,34 @@
+import:
+  - recipe/laravel.php
+  - contrib/php-fpm.php
+  - contrib/npm.php
+
+config:
+  application: 'confetti'
+  repository: 'git@github.com:3neti/confetti.git'
+  php_fpm_version: '7.4'
+
+hosts:
+  red:
+    remote_user: ploi
+    hostname: 'confetti.serbis.io'
+    deploy_path: '~/{{hostname}}'
+
+tasks:
+  deploy:
+    - deploy:prepare
+    - deploy:vendors
+    - artisan:storage:link
+    - artisan:view:cache
+    - artisan:config:cache
+    - artisan:migrate
+    - npm:install
+    - npm:run:prod
+    - deploy:publish
+    - php-fpm:reload
+  npm:run:prod:
+    script:
+      - 'cd {{release_or_current_path}} && npm run prod'
+
+after:
+  deploy:failed: deploy:unlock
