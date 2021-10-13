@@ -2,15 +2,19 @@
 
 namespace App\Providers;
 
-use App\Actions\AcknowledgeRegistrationAction;
-use App\Actions\TopupRegistrantAction;
 use App\Events\ContactCreated;
+use App\Events\ContactCheckedin;
 use App\Events\ContactRegistered;
-use App\Notifications\AcknowledgeRegistration;
+use App\Actions\TopupCheckinAction;
+use App\Actions\DDay\DeputizeContact;
+use App\Notifications\SendContactPIN;
+use Illuminate\Support\Facades\Event;
+use App\Actions\TopupRegistrantAction;
 use Illuminate\Auth\Events\Registered;
+use App\Actions\AcknowledgeRegistrationAction;
+use App\Notifications\AcknowledgeRegistration;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
-use Illuminate\Support\Facades\Event;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -23,12 +27,16 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
-        ContactCreated::class => [
-            AcknowledgeRegistrationAction::class
-        ],
+//        ContactCreated::class => [
+//            AcknowledgeRegistrationAction::class
+//        ],
         ContactRegistered::class => [
             TopupRegistrantAction::class
-        ]
+        ],
+        ContactCheckedin::class => [
+            DeputizeContact::class,
+            TopupCheckinAction::class
+        ],
     ];
 
     /**

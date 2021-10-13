@@ -4,7 +4,7 @@ namespace App\Notifications;
 
 use LBHurtado\EngageSpark\Notifications\BaseNotification;
 
-class TopupRegistrant extends BaseNotification
+class TopupContact extends BaseNotification
 {
     public function getContent($notifiable)
     {

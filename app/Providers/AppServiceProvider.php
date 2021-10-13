@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\Contact;
+use App\Observers\ContactObserver;
 use Coreproc\MsisdnPh\Msisdn;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Validator;
@@ -28,5 +30,7 @@ class AppServiceProvider extends ServiceProvider
         Validator::extend('msisdn', function ($attribute, $value, $parameters) {
             return Msisdn::validate($value);
         });
+
+        Contact::observe(ContactObserver::class);
     }
 }

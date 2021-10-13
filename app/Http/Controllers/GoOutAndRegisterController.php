@@ -50,29 +50,4 @@ class GoOutAndRegisterController extends Controller
         /*** answer ***/
         return (new GoOutAndRegisterResource(collect(compact('contact'))));
     }
-
-    /**
-     * @param Request $request
-     * @return array
-     */
-    protected function getData(Request $request): array
-    {
-        $content = json_decode($request->getContent(), true);
-        $data = [];
-        foreach($content as $fieldName=>$fieldValue) {
-            $this->cleanJotFormFieldName($fieldName);
-            if (in_array($fieldName, array_keys($this->rules)))
-                $data[$fieldName] = $fieldValue;
-        }
-
-        return $data;
-    }
-
-    /**
-     * @param string $fieldName
-     */
-    protected function cleanJotFormFieldName(string &$fieldName)
-    {
-        $fieldName = preg_replace("/.+?_/", '', $fieldName);
-    }
 }

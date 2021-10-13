@@ -2,7 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\GoOutAndRegisterController;
+use App\Http\Controllers\{
+    GoOutAndRegisterController,
+    CheckinController};
 
 /*
 |--------------------------------------------------------------------------
@@ -20,4 +22,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::any('/go-out-and-register', GoOutAndRegisterController::class);
+Route::post('/go-out-and-register', GoOutAndRegisterController::class);
+Route::post('/checkin', CheckinController::class);
