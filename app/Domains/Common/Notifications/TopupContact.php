@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Notifications;
+namespace App\Domains\Common\Notifications;
 
 use LBHurtado\EngageSpark\Notifications\BaseNotification;
 

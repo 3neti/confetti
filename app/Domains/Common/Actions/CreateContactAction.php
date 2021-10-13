@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Actions;
+namespace App\Domains\Common\Actions;
 
 use Lorisleiva\Actions\Concerns\AsAction;
 use LBHurtado\Missive\Repositories\ContactRepository;

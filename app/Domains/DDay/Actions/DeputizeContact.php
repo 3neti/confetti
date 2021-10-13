@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Actions\DDay;
+namespace App\Domains\DDay\Actions;
 
 use Hash;
 use App\Models\Contact;
-use App\Events\ContactCheckedin;
-use App\Notifications\SendContactPIN;
 use Lorisleiva\Actions\Concerns\AsAction;
+use App\Domains\DDay\Events\ContactCheckedin;
+use App\Domains\DDay\Notifications\SendContactPIN;
 
 class DeputizeContact
 {

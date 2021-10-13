@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Actions\DDay;
+namespace App\Domains\DDay\Actions;
 
-use App\Models\Checkin;
+use App\Domains\DDay\Models\Checkin;
 use Lorisleiva\Actions\Concerns\AsAction;
 use LBHurtado\Missive\Repositories\ContactRepository;
 

@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Events\ContactCreated;
+use App\Domains\Common\Events\ContactCreated;
 use Illuminate\Notifications\Notifiable;
 use LBHurtado\Missive\Models\Contact as BaseContact;
 use Illuminate\Database\Eloquent\Factories\HasFactory;

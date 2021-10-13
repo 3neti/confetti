@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Actions;
+namespace App\Domains\DDay\Actions;
+
+use App\Domains\Common\Actions\TopupContact;
 
 class TopupCheckinAction extends TopupContact
 {

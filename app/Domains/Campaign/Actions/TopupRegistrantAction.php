@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Actions;
+namespace App\Domains\Campaign\Actions;
+
+use App\Domains\Common\Actions\TopupContact;
 
 class TopupRegistrantAction extends TopupContact
 {

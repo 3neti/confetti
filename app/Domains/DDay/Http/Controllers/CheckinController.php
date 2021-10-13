@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Domains\DDay\Http\Controllers;
 
-use App\Actions\DDay\CheckinContactAction;
-use App\Events\ContactCheckedin;
-use App\Http\Resources\CheckinResource;
 use Validator;
-use Coreproc\MsisdnPh\Msisdn;
 use Illuminate\Http\Request;
+use Coreproc\MsisdnPh\Msisdn;
+use App\Domains\DDay\Events\ContactCheckedin;
+use App\Http\Controllers\Controller;
+use App\Domains\DDay\Actions\CheckinContactAction;
+use App\Domains\DDay\Http\Resources\CheckinResource;
 
 class CheckinController extends Controller
 {

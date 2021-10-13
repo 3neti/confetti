@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Actions;
+namespace App\Domains\Campaign\Actions;
 
 use App\Models\Contact;
-use App\Events\ContactCreated;
-use App\Notifications\AcknowledgeRegistration;
+use App\Domains\Common\Events\ContactCreated;
+use App\Domains\Campaign\Notifications\AcknowledgeRegistration;
 use Lorisleiva\Actions\Concerns\AsAction;
 
 class AcknowledgeRegistrationAction

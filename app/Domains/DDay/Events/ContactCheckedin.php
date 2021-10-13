@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Events;
+namespace App\Domains\DDay\Events;
 
-use App\Models\Checkin;
-use App\Models\Contact;
+use App\Domains\DDay\Models\Checkin;
+use App\Domains\Common\Events\ContactEvent;
 
 class ContactCheckedin extends ContactEvent
 {

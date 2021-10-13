@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Resources;
+namespace App\Domains\Campaign\Http\Resources;
 
-use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Http\Response;
+use Illuminate\Http\Resources\Json\JsonResource;
 
-class CheckinResource extends JsonResource
+class GoOutAndRegisterResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -24,7 +24,9 @@ class CheckinResource extends JsonResource
      */
     public function toResponse($request)
     {
+        $status_code = $this->get('contact')->wasRecentlyCreated ? Response::HTTP_CREATED : Response::HTTP_ALREADY_REPORTED;
+
         return parent::toResponse($request)
-            ->setStatusCode(Response::HTTP_CREATED);
+            ->setStatusCode($status_code);
     }
 }

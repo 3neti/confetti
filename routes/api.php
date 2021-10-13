@@ -1,10 +1,11 @@
 <?php
 
+use App\Domains\DDay\Http\Controllers\CheckinController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{
-    GoOutAndRegisterController,
-    CheckinController};
+use App\Domains\Campaign\Http\Controllers\{
+    GoOutAndRegisterController
+};
 
 /*
 |--------------------------------------------------------------------------
@@ -22,5 +23,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::post('/go-out-and-register', GoOutAndRegisterController::class);
-Route::post('/checkin', CheckinController::class);
+Route::post('/campaign/register', GoOutAndRegisterController::class);
+Route::post('/dday/checkin', CheckinController::class);

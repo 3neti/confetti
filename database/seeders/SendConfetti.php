@@ -27,7 +27,8 @@ class SendConfetti extends Seeder
 //            '09276386488' => 'Edwin',
 //            '09178329276' => 'Gen. Rio sir',
 //            '09175131507' => 'Dens',
-            '09062021800' => 'Joseph'
+//            '09062021800' => 'Joseph',
+            '09212824685' => 'Ed'
         ];
         $messages = [
             'TXTCMDR' => 'gumamit ng pre-paid phone na may internet. Ilagay ang tunay na cellphone number at makakakuha ito ng load. Stand by sa Quezon City SMS.',

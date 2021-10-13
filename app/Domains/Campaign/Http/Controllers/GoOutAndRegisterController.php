@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Domains\Campaign\Http\Controllers;
 
 use Validator;
 use Illuminate\Http\Request;
 use Coreproc\MsisdnPh\Msisdn;
-use App\Events\ContactRegistered;
-use App\Actions\CreateContactAction;
-use App\Http\Resources\GoOutAndRegisterResource;
+use App\Domains\Campaign\Events\ContactRegistered;
+use App\Domains\Common\Actions\CreateContactAction;
+use App\Http\Controllers\Controller;
+use App\Domains\Campaign\Http\Resources\GoOutAndRegisterResource;
 
 class GoOutAndRegisterController extends Controller
 {

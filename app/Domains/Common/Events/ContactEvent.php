@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Events;
+namespace App\Domains\Common\Events;
 
 use App\Models\Contact;
 use Illuminate\Broadcasting\Channel;

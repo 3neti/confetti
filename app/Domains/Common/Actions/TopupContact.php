@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Actions;
+namespace App\Domains\Common\Actions;
 
 use App\Models\Contact;
-use App\Events\ContactEvent;
+use App\Domains\Common\Events\ContactEvent;
 use Lorisleiva\Actions\Concerns\AsAction;
-use App\Notifications\TopupContact as TopupContactInstruction;
+use App\Domains\Common\Notifications\TopupContact as TopupContactInstruction;
 
 abstract class TopupContact
 {

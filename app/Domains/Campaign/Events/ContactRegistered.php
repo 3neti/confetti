@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Events;
+namespace App\Domains\Campaign\Events;
+
+use App\Domains\Common\Events\ContactEvent;
 
 class ContactRegistered extends ContactEvent
 {
