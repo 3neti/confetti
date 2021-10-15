@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Domains\DDay\Notifications;
+namespace App\Domains\DDay\Interfaces;
 
 interface MustSendPIN
 {

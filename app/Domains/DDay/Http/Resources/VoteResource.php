@@ -5,7 +5,7 @@ namespace App\Domains\DDay\Http\Resources;
 use Illuminate\Http\Response;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class CheckinResource extends JsonResource
+class VoteResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -17,7 +17,6 @@ class CheckinResource extends JsonResource
     {
         return parent::toArray($request);
     }
-
     /**
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\JsonResponse|object

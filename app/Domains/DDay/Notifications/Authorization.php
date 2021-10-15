@@ -2,15 +2,16 @@
 
 namespace App\Domains\DDay\Notifications;
 
+use App\Domains\DDay\Interfaces\MustSendPIN;
 use LBHurtado\EngageSpark\Notifications\BaseNotification;
 
-class SendContactPIN extends BaseNotification implements MustSendPIN
+class Authorization extends BaseNotification implements MustSendPIN
 {
     protected $pin;
 
     public function getContent($notifiable)
     {
-        return trans('confetti.checkin.pin', ['pin' => $this->pin]);
+        return trans('confetti.dday.authorization', ['pin' => $this->pin]);
     }
 
     public function setPIN($pin): self

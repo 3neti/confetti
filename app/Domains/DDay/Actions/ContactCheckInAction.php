@@ -6,7 +6,7 @@ use App\Domains\DDay\Models\Checkin;
 use Lorisleiva\Actions\Concerns\AsAction;
 use LBHurtado\Missive\Repositories\ContactRepository;
 
-class CheckinContactAction
+class ContactCheckInAction
 {
     use AsAction;
 

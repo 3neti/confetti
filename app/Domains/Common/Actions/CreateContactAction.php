@@ -12,7 +12,7 @@ class CreateContactAction
     public function handle($mobile, $handle, array $extra_attributes = null)
     {
         $contact = app(ContactRepository::class)
-            ->firstOrCreate(compact('mobile', 'handle'));
+            ->firstOrCreate(compact('mobile'),compact('mobile', 'handle'));
         if (null != $extra_attributes) {
             $contact->extra_attributes = $extra_attributes;
             $contact->save();

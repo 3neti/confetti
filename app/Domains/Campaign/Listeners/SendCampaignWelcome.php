@@ -1,19 +1,19 @@
 <?php
 
-namespace App\Domains\Campaign\Actions;
+namespace App\Domains\Campaign\Listeners;
 
 use App\Models\Contact;
 use App\Domains\Common\Events\ContactCreated;
-use App\Domains\Campaign\Notifications\AcknowledgeRegistration;
+use App\Domains\Campaign\Notifications\Welcome;
 use Lorisleiva\Actions\Concerns\AsAction;
 
-class AcknowledgeRegistrationAction
+class SendCampaignWelcome
 {
     use AsAction;
 
     public function handle(Contact $contact)
     {
-        $contact->notify(new AcknowledgeRegistration);
+        $contact->notify(new Welcome);
     }
 
     public function asListener(ContactCreated $event): void

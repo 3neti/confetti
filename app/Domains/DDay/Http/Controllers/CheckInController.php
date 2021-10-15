@@ -5,12 +5,12 @@ namespace App\Domains\DDay\Http\Controllers;
 use Validator;
 use Illuminate\Http\Request;
 use Coreproc\MsisdnPh\Msisdn;
-use App\Domains\DDay\Events\ContactCheckedin;
 use App\Http\Controllers\Controller;
-use App\Domains\DDay\Actions\CheckinContactAction;
-use App\Domains\DDay\Http\Resources\CheckinResource;
+use App\Domains\DDay\Events\ContactCheckedIn;
+use App\Domains\DDay\Actions\ContactCheckInAction;
+use App\Domains\DDay\Http\Resources\CheckInResource;
 
-class CheckinController extends Controller
+class CheckInController extends Controller
 {
     protected $rules = [
         'mobile' => 'required',
@@ -37,11 +37,11 @@ class CheckinController extends Controller
         extract($this->getLocation($validated['location']));
 
         /*** act ***/
-        $checkin = CheckinContactAction::run($mobile, $longitude, $latitude);
-        ContactCheckedin::dispatch($checkin);
+        $checkin = ContactCheckInAction::run($mobile, $longitude, $latitude);
+        ContactCheckedIn::dispatch($checkin);
 
         /*** answer ***/
-        return new CheckinResource(collect(compact('checkin')));
+        return new CheckInResource(collect(compact('checkin')));
     }
 
     protected function getLocation($data)

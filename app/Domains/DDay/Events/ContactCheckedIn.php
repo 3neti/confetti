@@ -5,7 +5,7 @@ namespace App\Domains\DDay\Events;
 use App\Domains\DDay\Models\Checkin;
 use App\Domains\Common\Events\ContactEvent;
 
-class ContactCheckedin extends ContactEvent
+class ContactCheckedIn extends ContactEvent
 {
     protected $checkin;
 
