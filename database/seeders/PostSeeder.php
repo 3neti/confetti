@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use App\Enums\PostType;
-use App\Models\Contact;
 use App\Models\Post;
+use App\Models\Contact;
+use App\Enums\DDayStage;
 use Illuminate\Database\Seeder;
 
 class PostSeeder extends Seeder
@@ -16,8 +16,8 @@ class PostSeeder extends Seeder
      */
     public function run()
     {
-        $contact = Contact::create(['mobile' => '09173011987']);
-        $post = Post::make(['type' => PostType::INGRESS()]);
+        $contact = Contact::firstOrcreate(['mobile' => '09173011987']);
+        $post = Post::make(['type' => DDayStage::INGRESS()]);
         $post->contact()->associate($contact);
         $post->cluster = '123456';
         $post->bei = 'Dr. Jeckyl';

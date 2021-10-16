@@ -31,6 +31,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('/campaign/register', GoOutAndRegisterController::class);
+
 Route::post('/dday/volunteer', VolunteerController::class);
 Route::post('/dday/checkin', CheckInController::class);
 Route::post('/dday/ingress', IngressController::class);
