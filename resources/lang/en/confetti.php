@@ -10,7 +10,8 @@ return [
         'expectation' => 'Please stand by - you will receive a "pasa load" shortly.  Thank you. - HQ',
     ],
     'campaign' => [
-        'welcome' => 'Welcome to the campaign!  Thank you.'
+        'welcome' => 'Welcome to the campaign!  Thank you.',
+        'link' => ':name Campaign: Click the :description link: :link',
     ],
     'dday' => [
         'authorization' => 'This is your authorization code: :pin. You will use it to authenticate your reports. - HQ',
@@ -23,7 +24,7 @@ return [
             DDayStage::EGRESS => 'Egress stage instructions',
 
         ],
-        'link' => ':name: Click the :description link: :link',
+        'link' => 'DDay :name: Click the :description link: :link',
     ],
     'reminder' => 'This is a reminder.',
 ];

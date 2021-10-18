@@ -16,6 +16,7 @@ trait HasCampaignFeatures
             $this->fillable,
             [
                 'age',
+                'aware',
                 'gender',
                 'lgu',
                 'precinct',
@@ -75,6 +76,30 @@ trait HasCampaignFeatures
     public function setPrecinctAttribute(string $value): self
     {
         $this->features['precinct'] = $value;
+
+        return $this;
+    }
+
+    public function getAwareAttribute(): bool
+    {
+        return $this->features['aware'];
+    }
+
+    public function setAwareAttribute(bool $value): self
+    {
+        $this->features['aware'] = $value;
+
+        return $this;
+    }
+
+    public function getInterestedAttribute(): bool
+    {
+        return $this->features['interested'];
+    }
+
+    public function setInterestedAttribute(bool $value): self
+    {
+        $this->features['interested'] = $value;
 
         return $this;
     }

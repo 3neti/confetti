@@ -3,7 +3,12 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Domains\Campaign\Http\Controllers\{
-    GoOutAndRegisterController
+    AwarenessController,
+    InterestController,
+    ConsiderationController,
+    EvaluationController,
+    DecisionController,
+    ConversionController,
 };
 use App\Domains\DDay\Http\Controllers\{
     VolunteerController,
@@ -14,6 +19,8 @@ use App\Domains\DDay\Http\Controllers\{
     TransmissionController,
     EgressController
 };
+
+use App\Domains\Campaign\Deprecate\GoOutAndRegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,3 +46,10 @@ Route::post('/dday/vote', VoteController::class);
 Route::post('/dday/count', CountController::class);
 Route::post('/dday/transmission', TransmissionController::class);
 Route::post('/dday/egress', EgressController::class);
+
+Route::post('/campaign/awareness', AwarenessController::class);
+Route::post('/campaign/interest', InterestController::class);
+Route::post('/campaign/consideration', ConsiderationController::class);
+Route::post('/campaign/evaluation', EvaluationController::class);
+Route::post('/campaign/decision', DecisionController::class);
+Route::post('/campaign/conversion', ConversionController::class);

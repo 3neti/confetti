@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Domains\Campaign\Http\Controllers;
+namespace App\Domains\Campaign\Deprecate;
 
 use Validator;
 use Illuminate\Http\Request;
 use Coreproc\MsisdnPh\Msisdn;
-use App\Domains\Campaign\Events\ContactRegistered;
+use App\Domains\Campaign\Deprecate\ContactRegistered;
 use App\Domains\Common\Actions\CreateContactAction;
 use App\Http\Controllers\Controller;
 use App\Domains\Campaign\Http\Resources\GoOutAndRegisterResource;

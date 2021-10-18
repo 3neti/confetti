@@ -2,6 +2,12 @@
 
 namespace App\Providers;
 
+use App\Domains\Campaign\Events\ContactConsidered;
+use App\Domains\Campaign\Events\ContactConverted;
+use App\Domains\Campaign\Events\ContactDecided;
+use App\Domains\Campaign\Events\ContactEvaluated;
+use App\Domains\Campaign\Events\ContactInterested;
+use App\Domains\Campaign\Events\ContactMadeAware;
 use Illuminate\Auth\Events\Registered;
 use App\Domains\Common\Events\ContactCreated;
 use App\Domains\DDay\Events\{ContactCheckedIn,
@@ -11,25 +17,36 @@ use App\Domains\DDay\Events\{ContactCheckedIn,
     ContactTransmitted,
     ContactVolunteered,
     ContactVoted};
-use App\Domains\DDay\{Listeners\SendCheckinLink,
+use App\Domains\DDay\{
+    Listeners\SendCheckinDDayTopup,
+    Listeners\SendCheckinDDayLink,
     Listeners\SendCountInstructions,
-    Listeners\SendCountLink,
-    Listeners\SendCountTopup,
+    Listeners\SendCountDDayLink,
+    Listeners\SendCountDDayTopup,
     Listeners\SendEgressInstructions,
-    Listeners\SendEgressLink,
-    Listeners\SendEgressTopup,
-    Listeners\SendIngressLink,
-    Listeners\SendIngressTopup,
+    Listeners\SendEgressDDayLink,
+    Listeners\SendEgressDDayTopup,
+    Listeners\SendIngressDDayLink,
+    Listeners\SendIngressDDayTopup,
     Listeners\SendTransmissionInstructions,
-    Listeners\SendTransmissionLink,
-    Listeners\SendTransmissionTopup,
+    Listeners\SendTransmissionDDayLink,
+    Listeners\SendTransmissionDDayTopup,
     Listeners\SendVoteInstructions,
-    Listeners\SendVoteLink,
-    Listeners\SendVoteTopup};
-use App\Domains\DDay\Listeners\SendCheckinTopup;
-use App\Domains\Campaign\Events\ContactRegistered;
-use App\Domains\Campaign\Listeners\{SendCampaignTopup};
-use App\Domains\Campaign\Listeners\SendCampaignWelcome;
+    Listeners\SendVoteDDayLink,
+    Listeners\SendVoteDDayTopup};
+use App\Domains\Campaign\Listeners\{SendAwarenessTopup,
+    SendAwarenessLink,
+    SendConsideredLink,
+    SendConsideredTopup,
+    SendConvertedLink,
+    SendConvertedTopup,
+    SendDecidedLink,
+    SendDecidedTopup,
+    SendEvaluatedLink,
+    SendEvaluatedTopup,
+    SendInterestedLink,
+    SendInterestedTopup};
+use App\Domains\Campaign\Deprecate\SendCampaignWelcome;
 use App\Domains\DDay\Listeners\SendCheckinInstructions;
 use App\Domains\DDay\Listeners\SendIngressInstructions;
 use App\Domains\DDay\Listeners\SendCheckinAuthorization;
@@ -54,37 +71,61 @@ class EventServiceProvider extends ServiceProvider
 //            SendCampaignTopup::class
 //        ],
         ContactVolunteered::class => [
-            SendCheckinLink::class,
+            SendCheckinDDayLink::class,
             SendCheckinInstructions::class,
         ],
         ContactCheckedIn::class => [
-            SendCheckinTopup::class,
+            SendCheckinDDayTopup::class,
             SendCheckinAuthorization::class,
             SendIngressInstructions::class,
-            SendIngressLink::class,
+            SendIngressDDayLink::class,
         ],
         ContactIngressed::class => [
-            SendIngressTopup::class,
+            SendIngressDDayTopup::class,
             SendVoteInstructions::class,
-            SendVoteLink::class,
+            SendVoteDDayLink::class,
         ],
         ContactVoted::class => [
-            SendVoteTopup::class,
+            SendVoteDDayTopup::class,
             SendCountInstructions::class,
-            SendCountLink::class,
+            SendCountDDayLink::class,
         ],
         ContactCounted::class => [
-            SendCountTopup::class,
+            SendCountDDayTopup::class,
             SendTransmissionInstructions::class,
-            SendTransmissionLink::class,
+            SendTransmissionDDayLink::class,
         ],
         ContactTransmitted::class => [
-            SendTransmissionTopup::class,
+            SendTransmissionDDayTopup::class,
             SendEgressInstructions::class,
-            SendEgressLink::class,
+            SendEgressDDayLink::class,
         ],
         ContactEgressed::class => [
-            SendEgressTopup::class,
+            SendEgressDDayTopup::class,
+        ],
+        ContactMadeAware::class => [
+            SendAwarenessTopup::class,
+            SendAwarenessLink::class,
+        ],
+        ContactInterested::class => [
+            SendInterestedTopup::class,
+            SendInterestedLink::class,
+        ],
+        ContactConsidered::class => [
+            SendConsideredTopup::class,
+            SendConsideredLink::class,
+        ],
+        ContactEvaluated::class => [
+            SendEvaluatedTopup::class,
+            SendEvaluatedLink::class,
+        ],
+        ContactDecided::class => [
+            SendDecidedTopup::class,
+            SendDecidedLink::class,
+        ],
+        ContactConverted::class => [
+            SendConvertedTopup::class,
+            SendConvertedLink::class,
         ],
     ];
 

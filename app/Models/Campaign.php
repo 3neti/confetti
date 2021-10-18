@@ -12,7 +12,8 @@ class Campaign extends Model
     use HasFactory, HasCampaignFeatures;
 
     protected $fillable = [
-        'type'
+        'type',
+        'features',
     ];
 
     protected $casts = [
