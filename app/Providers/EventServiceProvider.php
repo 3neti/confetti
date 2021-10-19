@@ -2,12 +2,15 @@
 
 namespace App\Providers;
 
+use App\Domains\Demo\Events\ContactDemoRegistered;
 use App\Domains\Campaign\Events\ContactConsidered;
 use App\Domains\Campaign\Events\ContactConverted;
 use App\Domains\Campaign\Events\ContactDecided;
 use App\Domains\Campaign\Events\ContactEvaluated;
 use App\Domains\Campaign\Events\ContactInterested;
 use App\Domains\Campaign\Events\ContactMadeAware;
+use App\Domains\Common\Listeners\ClosingRemarks;
+use App\Domains\Demo\Listeners\SendDemoRegisterTopup;
 use Illuminate\Auth\Events\Registered;
 use App\Domains\Common\Events\ContactCreated;
 use App\Domains\DDay\Events\{ContactCheckedIn,
@@ -67,9 +70,10 @@ class EventServiceProvider extends ServiceProvider
 //        ContactCreated::class => [
 //            SendCampaignWelcome::class
 //        ],
-//        ContactRegistered::class => [
-//            SendCampaignTopup::class
-//        ],
+        ContactDemoRegistered::class => [
+            SendDemoRegisterTopup::class,
+            ClosingRemarks::class,
+        ],
         ContactVolunteered::class => [
             SendCheckinDDayLink::class,
             SendCheckinInstructions::class,
@@ -102,6 +106,7 @@ class EventServiceProvider extends ServiceProvider
         ],
         ContactEgressed::class => [
             SendEgressDDayTopup::class,
+            ClosingRemarks::class,
         ],
         ContactMadeAware::class => [
             SendAwarenessTopup::class,

@@ -24,7 +24,11 @@ return [
             DDayStage::EGRESS => 'Egress stage instructions',
 
         ],
-        'link' => 'DDay :name: Click the :description link: :link',
+        'link' => 'DDay :name: Click the :description: :link',
     ],
-    'reminder' => 'This is a reminder.',
+    'remarks' => [
+        'opening' => 'Welcome...',
+        'closing' => 'Thank you for participating. https://youtu.be/dtaKLtYTWuA - 3neti',
+    ],
+    'reminder' => 'This is a reminder.', //deprecate
 ];

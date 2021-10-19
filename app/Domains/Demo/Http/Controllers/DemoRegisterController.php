@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Domains\Campaign\Deprecate;
+namespace App\Domains\Demo\Http\Controllers;
 
 use Validator;
 use Illuminate\Http\Request;
 use Coreproc\MsisdnPh\Msisdn;
-use App\Domains\Campaign\Deprecate\ContactRegistered;
-use App\Domains\Common\Actions\CreateContactAction;
 use App\Http\Controllers\Controller;
-use App\Domains\Campaign\Http\Resources\GoOutAndRegisterResource;
+use App\Domains\Demo\Events\ContactDemoRegistered;
+use App\Domains\Common\Actions\CreateContactAction;
+use App\Domains\Demo\Http\Resources\DemoRegisterResource;
 
-class GoOutAndRegisterController extends Controller
+class DemoRegisterController extends Controller
 {
     /**
      * @var string[]
@@ -24,7 +24,7 @@ class GoOutAndRegisterController extends Controller
 
     /**
      * @param Request $request
-     * @return GoOutAndRegisterResource
+     * @return DemoRegisterResource
      * @throws \Coreproc\MsisdnPh\Exceptions\InvalidMsisdnException
      */
     public function __invoke(Request $request)
@@ -46,9 +46,9 @@ class GoOutAndRegisterController extends Controller
 
         /*** act ***/
         $contact = CreateContactAction::run($mobile, $handle, $extra_attributes);
-        ContactRegistered::dispatch($contact);
+        ContactDemoRegistered::dispatch($contact);
 
         /*** answer ***/
-        return (new GoOutAndRegisterResource(collect(compact('contact'))));
+        return (new DemoRegisterResource(collect(compact('contact'))));
     }
 }

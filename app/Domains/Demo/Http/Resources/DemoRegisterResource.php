@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Domains\Campaign\Http\Resources;
+namespace App\Domains\Demo\Http\Resources;
 
 use Illuminate\Http\Response;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class GoOutAndRegisterResource extends JsonResource
+class DemoRegisterResource extends JsonResource
 {
     /**
      * Transform the resource into an array.

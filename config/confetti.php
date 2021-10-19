@@ -24,6 +24,11 @@ return [
             'pin' =>  env('CONTACT_DEFAULT_PIN', '1234')
         ],
     ],
+    'demo' => [
+        'topup' => [
+            'register' => (int) env('DEMO_REGISTER_TOPUP', 0),
+        ],
+    ],
     'dday' => [
         'link' => [
             DDayStage::CHECKIN => env('CHECKIN_LINK', 'bit.ly/DDayCheckIn'),

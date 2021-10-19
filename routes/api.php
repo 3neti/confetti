@@ -20,7 +20,7 @@ use App\Domains\DDay\Http\Controllers\{
     EgressController
 };
 
-use App\Domains\Campaign\Deprecate\GoOutAndRegisterController;
+use App\Domains\Demo\Http\Controllers\DemoRegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,7 +37,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/campaign/register', GoOutAndRegisterController::class);
+Route::post('/demo/register', DemoRegisterController::class);
 
 Route::post('/dday/volunteer', VolunteerController::class);
 Route::post('/dday/checkin', CheckInController::class);
