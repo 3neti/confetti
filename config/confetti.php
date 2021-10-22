@@ -44,7 +44,7 @@ return [
             DDayStage::VOTE => env('VOTE_TOPUP', 30),
             DDayStage::COUNT => env('COUNT_TOPUP', 40),
             DDayStage::TRANSMISSION => env('TRANSMISSION_TOPUP', 50),
-            DDayStage::EGRESS => env('INSPECTION_TOPUP', 60),
+            DDayStage::EGRESS => env('EGRESS_TOPUP', 60),
         ],
     ],
     'campaign' => [

@@ -75,8 +75,8 @@ class EventServiceProvider extends ServiceProvider
             ClosingRemarks::class,
         ],
         ContactVolunteered::class => [
-            SendCheckinDDayLink::class,
             SendCheckinInstructions::class,
+            SendCheckinDDayLink::class,
         ],
         ContactCheckedIn::class => [
             SendCheckinDDayTopup::class,

@@ -15,7 +15,7 @@ class SendConfetti extends Seeder
     public function run()
     {
         $mhandles = [
-//            '09173011987' => 'Lester Globe',
+            '09173011987' => 'Lester Globe',
 //            '09189362340' => 'Lester Smart'
 //            '09285056550' => 'Joy Rendon',
 //            '09178915975' => 'Brod Levi',
@@ -29,7 +29,12 @@ class SendConfetti extends Seeder
 //            '09175131507' => 'Dens',
 //            '09062021800' => 'Joseph',
 //            '09212824685' => 'Ed',
-            '09666532646' => 'Demo',
+//            '09666532646' => 'Demo',
+//            '09458055225' => 'Jimbo',
+//            '09173350707' => 'Roland',
+//            '09177112169' => 'Precy',
+//            '09494818089' => 'Jover',
+//            '09178915975' => 'Levi',
         ];
         $messages = [
             'TXTCMDR' => 'gumamit ng pre-paid phone na may internet. Ilagay ang tunay na cellphone number at makakakuha ito ng load. Stand by sa Quezon City SMS.',
