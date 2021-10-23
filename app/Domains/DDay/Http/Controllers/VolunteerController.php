@@ -25,12 +25,13 @@ class VolunteerController extends Controller
     public function __invoke(Request $request)
     {
         /*** attest ***/
-        $data = $this->getData($request);
-        $validated = Validator::validate($data, $this->rules);
+//        $data = $this->getData($request);
+//        $validated = Validator::validate($data, $this->rules);
 
         /*** arrange ***/
-        $mobile = (new Msisdn($validated['from']))
-            ->get(true);
+//        $mobile = (new Msisdn($validated['from']))
+//            ->get(true);
+        $mobile = $request->getContent();//using Telerivet
         $handle = 'Volunteer';
 
         /*** act ***/
