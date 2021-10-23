@@ -22,7 +22,7 @@ class SendVoteInstructionsTest extends TestCase
         /*** arrange ***/
         $message =
             "1. Vote right away! 2. Take a picture of the ballot receipt if you can. 3. Don't go out. " .
-            "4. Find out if there are policemen and military men nearby. 5. Stay vigilant!" .
+            "4. Find out if there are policemen and military men nearby. 5. Stay vigilant! " .
             "You will receive a separate SMS for the URL link of the next stage. " .
             "6. Click the link when BEI has voting has ended and the results are already finalized.";
         $listener = app(SendVoteInstructions::class);

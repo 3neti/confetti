@@ -22,7 +22,7 @@ class SendEgressInstructionsTest extends TestCase
         /*** arrange ***/
         $message =
             "1. You may safely leave the voting center. 2. Go straight home. " .
-            "3. From the electronic election return, you will be reporting the result of the candidate's position".
+            "3. From the electronic election return, you will be reporting the result of the candidate's position. ".
             "4. Thank you!" .
             "You will receive your payment shortly. " .
             "5. Click the link when you are already safe outside.";

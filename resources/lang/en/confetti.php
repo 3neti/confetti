@@ -31,23 +31,23 @@ return [
                 "8. Click the link when you're inside the voting center.",
             DDayStage::VOTE =>
                 "1. Vote right away! 2. Take a picture of the ballot receipt if you can. 3. Don't go out. " .
-                "4. Find out if there are policemen and military men nearby. 5. Stay vigilant!" .
+                "4. Find out if there are policemen and military men nearby. 5. Stay vigilant! " .
                 "You will receive a separate SMS for the URL link of the next stage. " .
                 "6. Click the link when BEI has voting has ended and the results are already finalized.",
             DDayStage::COUNT =>
                 "1. Take a picture of the results in the blackboard if you can. 2. Don't go out. " .
-                "3. Find out the winners in each of the positions 4. Stay vigilant!" .
+                "3. Find out the winners in each of the positions 4. Stay vigilant! " .
                 "You will receive a separate SMS for the URL link of the next stage. " .
                 "5. Click the link when BEI has transmitted or failed to transmit.",
             DDayStage::TRANSMISSION =>
                 "1. Take a picture of the printed election return if you can. 2. Don't go out. " .
-                "3. Find out if the transmission was successful. 4. Or if the SD Card has been retrieved".
+                "3. Find out if the transmission was successful. 4. Or if the SD Card has been retrieved. ".
                 "5. Stay vigilant!" .
                 "You will receive a separate SMS for the URL link of the next stage. " .
                 "6. Click the link when you just left the voting center.",
             DDayStage::EGRESS =>
                 "1. You may safely leave the voting center. 2. Go straight home. " .
-                "3. From the electronic election return, you will be reporting the result of the candidate's position".
+                "3. From the electronic election return, you will be reporting the result of the candidate's position. ".
                 "4. Thank you!" .
                 "You will receive your payment shortly. " .
                 "5. Click the link when you are already safe outside.",

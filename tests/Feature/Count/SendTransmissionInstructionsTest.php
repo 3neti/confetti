@@ -22,7 +22,7 @@ class SendTransmissionInstructionsTest extends TestCase
         /*** arrange ***/
         $message =
             "1. Take a picture of the printed election return if you can. 2. Don't go out. " .
-            "3. Find out if the transmission was successful. 4. Or if the SD Card has been retrieved".
+            "3. Find out if the transmission was successful. 4. Or if the SD Card has been retrieved. ".
             "5. Stay vigilant!" .
             "You will receive a separate SMS for the URL link of the next stage. " .
             "6. Click the link when you just left the voting center.";

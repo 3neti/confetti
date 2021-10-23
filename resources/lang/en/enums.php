@@ -4,7 +4,7 @@ use App\Enums\{CampaignStage, DDayStage};
 
 return [
     DDayStage::class => [
-        DDayStage::CHECKIN => 'signify intention in executing with your poll watching duties',
+        DDayStage::CHECKIN => 'signify intention in executing your poll watching duties',
         DDayStage::INGRESS => 'report your presence in the voting center',
         DDayStage::VOTE => 'report your vote',
         DDayStage::COUNT => 'report your tally',

@@ -21,7 +21,7 @@ class SendCheckinDDayLinkTest extends TestCase
 
         /*** arrange ***/
         $message =
-            "To signify intention in executing with your poll watching duties, " .
+            "To signify intention in executing your poll watching duties, " .
             "please click the following CHECKIN link: bit.ly/DDayCheckIn";
         $listener = app(SendCheckinDDayLink::class);
         $contact = Contact::factory()->create();

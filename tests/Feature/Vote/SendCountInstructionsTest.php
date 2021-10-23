@@ -22,7 +22,7 @@ class SendCountInstructionsTest extends TestCase
         /*** arrange ***/
         $message =
             "1. Take a picture of the results in the blackboard if you can. 2. Don't go out. " .
-            "3. Find out the winners in each of the positions 4. Stay vigilant!" .
+            "3. Find out the winners in each of the positions 4. Stay vigilant! " .
             "You will receive a separate SMS for the URL link of the next stage. " .
             "5. Click the link when BEI has transmitted or failed to transmit.";
         $listener = app(SendCountInstructions::class);
