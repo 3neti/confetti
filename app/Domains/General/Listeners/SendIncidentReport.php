@@ -38,7 +38,11 @@ class SendIncidentReport
         $title = 'Incident Report';
         $from = 'From: ' . $this->post->contact->mobile;
         $message = "Type: " . $this->post->incident . "\r\n" . "Action: " . $this->post->action . "\r\n" . "Remarks: " . $this->post->remarks;
-        $geotag = implode("\r\n", Arr::only($this->post->geotag, ["Datetime", "Street", "Neighborhood", "City"]));
+        try {
+            $geotag = implode("\r\n", Arr::only($this->post->geotag, ["Datetime", "Street", "Neighborhood", "City"]));
+        } catch (\Exception $e) {
+            $geotag = implode("\r\n", $this->post->geotag);
+        }
 
         return $title . "\r\n" . "\r\n" . $from . "\r\n" . $message . "\r\n" . "\r\n" . $geotag;
     }
