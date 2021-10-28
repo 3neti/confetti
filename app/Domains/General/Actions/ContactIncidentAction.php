@@ -26,7 +26,7 @@ class ContactIncidentAction
         $post->geotag = $features['geotag'];
         $post->save();
 
-        ContactCheckInAction::dispatch($contact, $post->geotag['Longitude'], $post->geotag['Latitude']);
+//        ContactCheckInAction::dispatch($contact, $post->geotag['Longitude'], $post->geotag['Latitude']);
 
         return $post;
     }

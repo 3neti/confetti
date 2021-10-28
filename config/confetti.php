@@ -46,7 +46,7 @@ return [
             DDayStage::COUNT => env('COUNT_TOPUP', 40),
             DDayStage::TRANSMISSION => env('TRANSMISSION_TOPUP', 50),
             DDayStage::EGRESS => env('EGRESS_TOPUP', 60),
-            DDayStage::INCIDENT => env('INCIDENT_TOPUP', 70),
+            DDayStage::INCIDENT => env('INCIDENT_TOPUP', 25),
         ],
     ],
     'campaign' => [

@@ -13,6 +13,7 @@ use App\Domains\Common\Listeners\ClosingRemarks;
 use App\Domains\Demo\Listeners\SendDemoRegisterTopup;
 use App\Domains\General\Events\ContactReported;
 use App\Domains\General\Listeners\SendIncidentReport;
+use App\Domains\General\Listeners\SendIncidentTopup;
 use Illuminate\Auth\Events\Registered;
 use App\Domains\Common\Events\ContactCreated;
 use App\Domains\DDay\Events\{ContactCheckedIn,
@@ -136,7 +137,8 @@ class EventServiceProvider extends ServiceProvider
             SendConvertedLink::class,
         ],
         ContactReported::class => [
-            SendIncidentReport::class
+            SendIncidentReport::class,
+            SendIncidentTopup::class,
         ],
     ];
 
