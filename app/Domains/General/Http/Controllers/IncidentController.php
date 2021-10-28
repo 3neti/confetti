@@ -39,7 +39,11 @@ class IncidentController extends Controller
         $geotag = ['Datetime' => $datetime];
         foreach ($array as $row) {
             $data = explode(': ', $row);
-            $geotag[$data[0]] = $data[1];
+            try {
+                $geotag[$data[0]] = $data[1];
+            } catch (\Exception $exception) {
+
+            }
         }
 
         /*** act ***/
