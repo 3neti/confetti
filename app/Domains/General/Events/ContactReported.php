@@ -18,6 +18,6 @@ class ContactReported extends ContactEvent
 
     protected function log()
     {
-        info("Contact {$this->contact->handle} ({$this->contact->mobile}) reported an incident in {$this->post->geotag['Neighborhood']} neighborhood.");
+        info("Contact {$this->contact->handle} ({$this->contact->mobile}) reported an incident.");
     }
 }
