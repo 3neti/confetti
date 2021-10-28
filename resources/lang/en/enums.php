@@ -9,7 +9,8 @@ return [
         DDayStage::VOTE => 'report your vote',
         DDayStage::COUNT => 'report your tally',
         DDayStage::TRANSMISSION => 'report the transmission proceedings',
-        DDayStage::EGRESS => "report the candidate's position results"
+        DDayStage::EGRESS => "report the candidate's position results",
+        DDayStage::INCIDENT => "report any incident"
     ],
     CampaignStage::class => [
         CampaignStage::AWARENESS => 'awareness stage link',

@@ -36,7 +36,8 @@ return [
             DDayStage::VOTE => env('VOTE_LINK', 'bit.ly/DDayVote'),
             DDayStage::COUNT => env('COUNT_LINK', 'bit.ly/DDayCount'),
             DDayStage::TRANSMISSION => env('TRANSMISSION_LINK', 'bit.ly/DDayTransmission'),
-            DDayStage::EGRESS => env('INSPECTION_LINK', 'bit.ly/DDayEgress'),
+            DDayStage::EGRESS => env('EGRESS_LINK', 'bit.ly/DDayEgress'),
+            DDayStage::INCIDENT => env('INCIDENT_LINK', 'bit.ly/cqrArjo'),
         ],
         'topup' => [
             DDayStage::CHECKIN => env('CHECKIN_TOPUP', 10),
@@ -45,6 +46,7 @@ return [
             DDayStage::COUNT => env('COUNT_TOPUP', 40),
             DDayStage::TRANSMISSION => env('TRANSMISSION_TOPUP', 50),
             DDayStage::EGRESS => env('EGRESS_TOPUP', 60),
+            DDayStage::INCIDENT => env('INCIDENT_TOPUP', 70),
         ],
     ],
     'campaign' => [
@@ -98,5 +100,8 @@ return [
             CampaignStage::DECISION => env('DECISION_TOPUP', 40),
             CampaignStage::CONVERSION => env('CONVERSION_TOPUP', 50),
         ],
+    ],
+    'forward' => [
+        'report' => env('FORWARD_REPORT', '09173011987, 09189362340')
     ],
 ];

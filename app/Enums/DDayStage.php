@@ -12,6 +12,7 @@ use BenSampo\Enum\Contracts\LocalizedEnum;
  * @method static static COUNT()
  * @method static static TRANSMISSION()
  * @method static static EGRESS()
+ * @method static static INCIDENT()
  */
 final class DDayStage extends Enum implements LocalizedEnum
 {
@@ -21,4 +22,5 @@ final class DDayStage extends Enum implements LocalizedEnum
     const COUNT = 'Count';
     const TRANSMISSION = 'Transmission';
     const EGRESS = 'Egress';
+    const INCIDENT = 'Incident';
 }

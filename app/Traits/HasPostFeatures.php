@@ -34,6 +34,10 @@ trait HasPostFeatures
                 'candidate3',
                 'candidate4',
                 'candidate5',
+                'incident',
+                'action',
+                'remarks',
+                'geotag'
             ]
         );
         $this->casts = array_merge($this->casts, ['features' => SchemalessAttributes::class]);
@@ -270,6 +274,54 @@ trait HasPostFeatures
     public function setCandidate5Attribute(string $value): self
     {
         $this->features['candidate5'] = $value;
+
+        return $this;
+    }
+
+    public function getIncidentAttribute(): string
+    {
+        return $this->features['incident'];
+    }
+
+    public function setIncidentAttribute(string $value): self
+    {
+        $this->features['incident'] = $value;
+
+        return $this;
+    }
+
+    public function getActionAttribute(): string
+    {
+        return $this->features['action'];
+    }
+
+    public function setActionAttribute(string $value): self
+    {
+        $this->features['action'] = $value;
+
+        return $this;
+    }
+
+    public function getRemarksAttribute(): string
+    {
+        return $this->features['remarks'];
+    }
+
+    public function setRemarksAttribute(string $value): self
+    {
+        $this->features['remarks'] = $value;
+
+        return $this;
+    }
+
+    public function getGeotagAttribute(): array
+    {
+        return $this->features['geotag'];
+    }
+
+    public function setGeotagAttribute(array $value): self
+    {
+        $this->features['geotag'] = $value;
 
         return $this;
     }

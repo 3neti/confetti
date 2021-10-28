@@ -19,6 +19,7 @@ use App\Domains\DDay\Http\Controllers\{
     TransmissionController,
     EgressController
 };
+use App\Domains\General\Http\Controllers\IncidentController;
 
 use App\Domains\Demo\Http\Controllers\DemoRegisterController;
 
@@ -53,3 +54,5 @@ Route::post('/campaign/consideration', ConsiderationController::class);
 Route::post('/campaign/evaluation', EvaluationController::class);
 Route::post('/campaign/decision', DecisionController::class);
 Route::post('/campaign/conversion', ConversionController::class);
+
+Route::post('/election/incident', IncidentController::class);

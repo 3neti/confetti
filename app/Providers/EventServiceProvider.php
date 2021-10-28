@@ -11,6 +11,8 @@ use App\Domains\Campaign\Events\ContactInterested;
 use App\Domains\Campaign\Events\ContactMadeAware;
 use App\Domains\Common\Listeners\ClosingRemarks;
 use App\Domains\Demo\Listeners\SendDemoRegisterTopup;
+use App\Domains\General\Events\ContactReported;
+use App\Domains\General\Listeners\SendIncidentReport;
 use Illuminate\Auth\Events\Registered;
 use App\Domains\Common\Events\ContactCreated;
 use App\Domains\DDay\Events\{ContactCheckedIn,
@@ -20,8 +22,7 @@ use App\Domains\DDay\Events\{ContactCheckedIn,
     ContactTransmitted,
     ContactVolunteered,
     ContactVoted};
-use App\Domains\DDay\{
-    Listeners\SendCheckinDDayTopup,
+use App\Domains\DDay\{Listeners\SendCheckinDDayTopup,
     Listeners\SendCheckinDDayLink,
     Listeners\SendCountInstructions,
     Listeners\SendCountDDayLink,
@@ -29,6 +30,7 @@ use App\Domains\DDay\{
     Listeners\SendEgressInstructions,
     Listeners\SendEgressDDayLink,
     Listeners\SendEgressDDayTopup,
+    Listeners\SendIncidentDDayLink,
     Listeners\SendIngressDDayLink,
     Listeners\SendIngressDDayTopup,
     Listeners\SendTransmissionInstructions,
@@ -77,6 +79,7 @@ class EventServiceProvider extends ServiceProvider
         ContactVolunteered::class => [
             SendCheckinInstructions::class,
             SendCheckinDDayLink::class,
+            SendIncidentDDayLink::class,
         ],
         ContactCheckedIn::class => [
             SendCheckinDDayTopup::class,
@@ -131,6 +134,9 @@ class EventServiceProvider extends ServiceProvider
         ContactConverted::class => [
             SendConvertedTopup::class,
             SendConvertedLink::class,
+        ],
+        ContactReported::class => [
+            SendIncidentReport::class
         ],
     ];
 
